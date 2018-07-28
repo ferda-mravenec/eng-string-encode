@@ -130,7 +130,6 @@ begin
     end
   else
     Result := chr(b);
-
 end;
 
 function decodeReplace2(b: byte): string;
@@ -380,7 +379,12 @@ begin
       else // Písmena, která nebyly následovány samohláskou
         if wi[i] < ENCODE_BYTE_RANGE+1 then
         begin
-          s := s + decodeReplace1(wi[i]+BYTE_SHIFT_DOWN);
+          ps := ' ';
+          ps[1] := decodeReplace1(wi[i]+BYTE_SHIFT_DOWN);
+          if ps[1]=#0 then
+            s := s + decodeReplace2(wi[i]+BYTE_SHIFT_DOWN)
+          else
+            s := s + ps[1];
         end;
 
     end; // end for
