@@ -11,9 +11,4 @@ In this version the function encode() and procedure decode() are the main layer.
 
 However I plan to make one more layer to replace prefixes and suffixes of English Word(s) so these function should be moved to 2nd layer.
 
-Bugs:
-1) The encode and decode function are tested and I have no found any bugs.
-2) I used TStringList.saveToFile(string sss) -> bug here:
-
-Instead text file, binary file was generated. Instead line feed and carriage return separator,
-I see 0x0D0A in the file on the end of the word. Maybe BOM is missing?
+No bugs found.
