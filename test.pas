@@ -4,12 +4,13 @@ interface
 
 uses Classes, SysUtils, Transform;
 
-var sArr, allBytes, content: TBytes;
-sss: String;
-len : byte;
-sumLen: word;
-buffer: string;
-o1, o2: longword; // offsety
+var SourceList, AddList: TStringList;
+  sArr, allBytes, content: TBytes;
+  sss: String;
+  len : byte;
+  sumLen: word;
+  buffer: string;
+  o1, o2: longword; // offsety
 
 begin
 
@@ -32,7 +33,7 @@ begin
     do
       try
         seek(0, soBeginning);
-        Write(allBytes[0], sumLen ) // zapsat výstupní pole
+        Write(allBytes[0], sumLen ) // zapsat vÃ½stupnÃ­ pole
       finally
         free;
       end;
@@ -43,7 +44,7 @@ begin
       try
         setLength(content, size);
         seek(0, soBeginning);
-        readbuffer(content[0], size ); // zapsat výstupní pole
+        readbuffer(content[0], size ); // zapsat vÃ½stupnÃ­ pole
         o1 := 0;
         for i := 0 to size-1 do
           begin
